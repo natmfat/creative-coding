@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      // @audit-ok https://stackoverflow.com/questions/21147149/flash-of-unstyled-content-fouc-in-firefox-only-is-ff-slow-renderer
+      let FF_FOUC_FIX;
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Nathan | Creative Coding</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/shared/globals.css" />
+  </head>
+  <body>
+    <div id="app" class="max-w-2xl mx-auto px-6 mt-20">
+      <h1 class="mt-4 text-2xl font-semibold">Creative Coding</h1>
+      <p class="mt-2 text-slate-500">
+        A collection of fun artwork built with p5, Three.js, and TypeScript.
+      </p>
+      <div id="sketches" class="flex gap-2 mt-2"></div>
+    </div>
+
+    <script type="module" src="/shared/index.ts"></script>
+  </body>
+</html>
