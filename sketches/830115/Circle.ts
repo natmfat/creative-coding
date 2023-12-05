@@ -19,7 +19,7 @@ export class Circle {
     return this.__sketch.lerp(
       GRID_MARGIN,
       this.__sketch.width - GRID_MARGIN,
-      (coord + 0.5) / GRID_SIZE
+      coord
     );
   }
 
@@ -28,8 +28,8 @@ export class Circle {
       return;
     }
 
-    sketch.circle(this.scale(this.pos.x), this.scale(this.pos.y), CELL_SIZE);
     sketch.fill(this.color);
     sketch.noStroke();
+    sketch.circle(this.scale(this.pos.x), this.scale(this.pos.y), CELL_SIZE);
   }
 }

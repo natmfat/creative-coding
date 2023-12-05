@@ -11,9 +11,11 @@ Object.keys(sketches)
   .map((sketch) => parseInt(sketch.split("/")[2]))
   .filter((sketch) => !isNaN(sketch))
   .forEach((sketch) => {
+    const sketchString = sketch.toString().padStart(6, "0");
+
     const $link = document.createElement("a");
     $link.className = "underline hover:drop-shadow-md";
-    $link.href = `/sketches/${sketch}/`;
-    $link.textContent = sketch.toString();
+    $link.href = `/sketches/${sketchString}/`;
+    $link.textContent = sketchString.toString();
     $sketches.appendChild($link);
   });

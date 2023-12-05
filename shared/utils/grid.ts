@@ -1,9 +1,12 @@
-export function createGrid(size: number) {
+export function createGrid(count: number) {
   const grid: number[][] = [];
 
-  for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
-      grid.push([i, j]);
+  for (let x = 0; x < count; x++) {
+    for (let y = 0; y < count; y++) {
+      grid.push([
+        count <= 1 ? 0.5 : x / (count - 1),
+        count <= 1 ? 0.5 : y / (count - 1),
+      ]);
     }
   }
 

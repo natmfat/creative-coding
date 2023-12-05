@@ -11,7 +11,7 @@ new p5((sketch: p5) => {
       new Character(
         sketch,
         sketch.random(colors),
-        sketch.random(["-", "▴"]),
+        sketch.random(["-", "-", "▴"]),
         pos
       )
   );
@@ -19,6 +19,7 @@ new p5((sketch: p5) => {
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
     canvas.elt.className = "canvas--center";
+    sketch.noLoop();
   };
 
   sketch.draw = () => {

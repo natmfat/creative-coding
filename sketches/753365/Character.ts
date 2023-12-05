@@ -1,5 +1,5 @@
 import p5 from "p5";
-import { GRID_MARGIN, GRID_SIZE } from "./config";
+import { GRID_MARGIN } from "./config";
 
 export class Character {
   private __sketch: p5;
@@ -14,14 +14,14 @@ export class Character {
     this.pos = new p5.Vector(pos[0], pos[1]);
     this.color = color;
     this.character = character;
-    this.noise = __sketch.noise(this.pos.x / 20, this.pos.y / 20);
+    this.noise = __sketch.noise(this.pos.x * 10, this.pos.y * 10);
   }
 
   scale(coord: number) {
     return this.__sketch.lerp(
       GRID_MARGIN,
       this.__sketch.width - GRID_MARGIN,
-      (coord + 0.5) / GRID_SIZE
+      coord
     );
   }
 
