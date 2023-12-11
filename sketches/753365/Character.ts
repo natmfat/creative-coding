@@ -1,5 +1,5 @@
 import p5 from "p5";
-import { GRID_MARGIN } from "./config";
+import { GRID_MARGIN, NOISE_SCALE } from "./config";
 
 export class Character {
   private __sketch: p5;
@@ -14,7 +14,10 @@ export class Character {
     this.pos = new p5.Vector(pos[0], pos[1]);
     this.color = color;
     this.character = character;
-    this.noise = __sketch.noise(this.pos.x * 10, this.pos.y * 10);
+    this.noise = Math.pow(
+      __sketch.noise(pos[0] * NOISE_SCALE, pos[1] * NOISE_SCALE) + 0.7,
+      4
+    );
   }
 
   scale(coord: number) {
@@ -29,8 +32,8 @@ export class Character {
     sketch.push();
 
     sketch.translate(this.scale(this.pos.x), this.scale(this.pos.y));
-    sketch.rotate(sketch.map(this.noise, 0, 1, 0, sketch.TWO_PI));
-    sketch.scale(this.noise * 4 + 1);
+    sketch.rotate(this.noise);
+    sketch.scale(this.noise);
 
     sketch.textAlign(sketch.CENTER);
     sketch.fill(this.color);

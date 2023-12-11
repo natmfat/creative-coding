@@ -15,7 +15,7 @@ if ! [[ $1 ]]; then
 fi
 
 # ensure fork base exists
-template="./sketches/$base"
+template="./sketches/$1"
 if ! [[ -d $template ]]; then
   echo "sketch $1 does not exist"
   exit 1
