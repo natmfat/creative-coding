@@ -9,8 +9,13 @@ then
   exit 1
 fi
 
+if ! [[ $1 ]]; then
+  echo "must pass in a sketch number"
+  exit 1
+fi
+
 # ensure fork base exists
-template="./sketches/$1"
+template="./sketches/$base"
 if ! [[ -d $template ]]; then
   echo "sketch $1 does not exist"
   exit 1
