@@ -1,5 +1,5 @@
 import p5 from "p5";
-import { GRID_MARGIN, GRID_SIZE, CELL_SIZE } from "./config";
+import { GRID_MARGIN, CELL_SIZE } from "./config";
 
 export class Circle {
   private __sketch: p5;

@@ -3,6 +3,12 @@ set -e
 # load env
 source .env
 
+if ! [[ -d $VITE_SKETCHES_DIR ]]
+then
+  echo "sketches dir not found"
+  exit 1
+fi
+
 # ensure fork base exists
 template="./sketches/$1"
 if ! [[ -d $template ]]; then
