@@ -15,12 +15,17 @@ export function title(title: string) {
   );
 }
 
-export function getSketchID(): string {
-  const sketchNumber = parseInt(
-    location.pathname
+export function getSketchID(
+  sketchNumber: number | string = location.href
+): string {
+  sketchNumber = parseInt(
+    sketchNumber
+      .toString()
+      .replace("index.html", "/")
       .split("/")
       .filter((segment) => segment.length > 0)
       .pop() || ""
   );
+
   return (isNaN(sketchNumber) ? 0 : sketchNumber).toString().padStart(6, "0");
 }

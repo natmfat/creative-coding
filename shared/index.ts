@@ -1,3 +1,6 @@
+import { getSketchID } from "./utils/document";
+import { jsh } from "./utils/jsh";
+
 if (window.location.pathname !== "/") {
   throw new Error("do not import index.ts across other files");
   // @todo do something useful (ie: random sketch or next sketch in list)
@@ -8,14 +11,16 @@ const sketches = import.meta.glob("../sketches/**/*.html");
 
 // @audit-ok would use import.meta.env.VITE_SKETCHES_DIR but only literals allowed
 Object.keys(sketches)
-  .map((sketch) => parseInt(sketch.split("/")[2]))
-  .filter((sketch) => !isNaN(sketch))
+  .map(getSketchID)
+  .filter((sketch) => sketch !== "000000")
   .forEach((sketch) => {
-    const sketchString = sketch.toString().padStart(6, "0");
-
-    const $link = document.createElement("a");
-    $link.className = "underline hover:drop-shadow-md";
-    $link.href = `/sketches/${sketchString}/`;
-    $link.textContent = sketchString.toString();
-    $sketches.appendChild($link);
+    $sketches.appendChild(
+      jsh.a(
+        {
+          className: "underline hover:drop-shadow-md",
+          href: `/sketches/${sketch}/`,
+        },
+        sketch
+      )
+    );
   });
