@@ -10,6 +10,7 @@ export function title(title: string) {
           "fixed bottom-6 left-1/2 -translate-x-1/2 text-sm px-4 py-2 rounded-md border shadow-md",
       },
       title,
+      " • ",
       jsh.span({ className: "text-slate-400" }, `#${getSketchID()}`)
     )
   );

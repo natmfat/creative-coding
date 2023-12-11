@@ -5,7 +5,7 @@ import { GRID_SIZE } from "./config";
 import { Character } from "./Character";
 import { title } from "shared/utils/document";
 
-title("matrix");
+title("Noise");
 
 new p5((sketch: p5) => {
   const [bg, ...colors] = sketch.shuffle(createPalette());
