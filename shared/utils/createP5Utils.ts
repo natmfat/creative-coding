@@ -16,5 +16,9 @@ export function createP5Utils(sketch: p5) {
     );
   }
 
-  return { frame };
+  function scale(gridSize: number, gridMargin: number, i: number) {
+    return sketch.lerp(gridMargin, gridSize - gridMargin, i);
+  }
+
+  return { frame, scale };
 }
