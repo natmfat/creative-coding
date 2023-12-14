@@ -23,6 +23,11 @@ new p5((sketch: p5) => {
       rectangle.draw(sketch, palette);
     }
 
-    createP5Utils(sketch).frame(7);
+    const utils = createP5Utils(sketch);
+
+    sketch.image(utils.createNoiseOverlay(), 0, 0);
+    sketch.blendMode(sketch.BLEND);
+
+    utils.frame(7);
   };
 });

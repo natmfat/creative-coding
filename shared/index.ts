@@ -7,9 +7,10 @@ if (window.location.pathname !== "/") {
 }
 
 const $sketches = document.getElementById("sketches")!;
-const sketches = import.meta.glob("../sketches/**/*.html");
+const $gallery = document.getElementById("gallery")!;
 
 // @audit-ok would use import.meta.env.VITE_SKETCHES_DIR but only literals allowed
+const sketches = import.meta.glob("../sketches/**/*.html");
 Object.keys(sketches)
   .map(getSketchID)
   .filter((sketch) => sketch !== "000000")
@@ -21,6 +22,23 @@ Object.keys(sketches)
           href: `/sketches/${sketch}/`,
         },
         sketch
+      )
+    );
+  });
+
+const images = import.meta.glob("../gallery/*.png");
+
+Object.keys(images)
+  .map(getSketchID)
+  .filter((sketch) => sketch !== "000000")
+  .forEach((sketch) => {
+    $gallery.appendChild(
+      jsh.a(
+        {
+          className: "block no-underline",
+          href: `/sketches/${sketch}/`,
+        },
+        jsh.img({ src: `/gallery/${sketch}.png`, alt: `Sketch #${sketch}` })
       )
     );
   });

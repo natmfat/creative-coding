@@ -1,5 +1,6 @@
 import p5 from "p5";
 import { createPalette } from "shared/utils/color";
+import { createP5Utils } from "shared/utils/createP5Utils";
 import { title } from "shared/utils/document";
 
 const GRID_MARGIN = 40;
@@ -47,10 +48,14 @@ new p5((sketch: p5) => {
     })
     .filter((t) => t[0][0] !== t[1][0]);
 
+  let noiseOverlay: p5.Graphics;
+
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
     canvas.elt.className = "canvas--center outline";
     sketch.noLoop();
+
+    noiseOverlay = createP5Utils(sketch).createNoiseOverlay();
   };
 
   sketch.draw = () => {
@@ -71,5 +76,8 @@ new p5((sketch: p5) => {
 
       sketch.endShape(sketch.CLOSE);
     }
+
+    sketch.image(noiseOverlay, 0, 0);
+    sketch.blendMode(sketch.BLEND);
   };
 });

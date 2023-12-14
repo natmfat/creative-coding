@@ -3,6 +3,7 @@ import { createPalette } from "shared/utils/color";
 import { Rectangle } from "./Rectangle";
 import { title } from "shared/utils/document";
 import { createGrid } from "shared/utils/grid";
+import { createP5Utils } from "shared/utils/createP5Utils";
 
 title("Piet Mondrian Grid");
 
@@ -14,7 +15,7 @@ new p5((sketch: p5) => {
 
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
-    canvas.elt.className = "canvas--center outline";
+    canvas.elt.className = "canvas--center";
     sketch.noLoop();
 
     const CELL_SIZE = (sketch.width - GRID_MARGIN * 2) / GRID_SIZE;
@@ -45,5 +46,12 @@ new p5((sketch: p5) => {
           rectangle.draw(sketch, palette);
         }
       });
+
+    const utils = createP5Utils(sketch);
+
+    sketch.image(utils.createNoiseOverlay(), 0, 0);
+    sketch.blendMode(sketch.BLEND);
+
+    utils.frame(7);
   };
 });

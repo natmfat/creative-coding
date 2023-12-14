@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>
-      // @audit-ok https://stackoverflow.com/questions/21147149/flash-of-unstyled-content-fouc-in-firefox-only-is-ff-slow-renderer
-      let FF_FOUC_FIX;
-    </script>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -25,19 +20,6 @@
     <link rel="stylesheet" href="/shared/globals.css" />
   </head>
   <body>
-    <div id="app" class="max-w-2xl mx-auto px-6 mt-20">
-      <h1 class="mt-4 text-2xl font-semibold">Creative Coding</h1>
-      <p class="mt-2 text-slate-500">
-        A generative art collection by Nathan. Few works are actually titled,
-        instead serving as a random exploration through code.
-      </p>
-      <div id="sketches" class="flex flex-wrap gap-2 mt-2 font-mono"></div>
-
-      <div id="gallery" class="flex flex-wrap flex-0 mt-2 gap-2"></div>
-
-      <footer class="text-center py-4 px-2 text-slate-500">@natmfat</footer>
-    </div>
-
-    <script type="module" src="/shared/index.ts"></script>
+    <script type="module" src="./sketch.ts"></script>
   </body>
 </html>

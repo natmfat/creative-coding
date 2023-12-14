@@ -13,6 +13,26 @@ export function createP5Utils(
   { gridSizeX = 0, gridSizeY = 0, gridMargin = 40 }: Partial<P5UtilsConfig> = {}
 ) {
   /**
+   * Create a textured noise pattern over the sketch \
+   * Computationally prohibitive to run every frame, use in setup
+   * @link https://openprocessing.org/sketch/2102209
+   * @returns Completed noise overlay
+   */
+  function createNoiseOverlay() {
+    const noiseOverlay = sketch.createGraphics(sketch.width, sketch.height);
+    noiseOverlay.loadPixels();
+    for (let x = 0; x < sketch.width; x++) {
+      for (let y = 0; y < sketch.height; y++) {
+        const rand = sketch.random() * 255;
+        noiseOverlay.set(x, y, [rand, rand, rand, 20]);
+      }
+    }
+
+    noiseOverlay.updatePixels();
+    return noiseOverlay;
+  }
+
+  /**
    * Add an outline built-in to the canvas instead of a CSS outline
    * @param weight Width of the outline
    */
@@ -31,5 +51,5 @@ export function createP5Utils(
     return sketch.lerp(gridMargin, gridSizeY - gridMargin, x);
   }
 
-  return { frame, scaleX, scaleY };
+  return { frame, scaleX, scaleY, createNoiseOverlay };
 }
