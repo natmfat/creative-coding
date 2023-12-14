@@ -10,12 +10,12 @@ new p5((sketch: p5) => {
 
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
-    canvas.elt.className = "canvas--center";
+    canvas.elt.className = "canvas--center outline";
     sketch.noLoop();
   };
 
   sketch.draw = () => {
-    sketch.background(0);
+    sketch.background(255);
 
     for (const point of grid) {
       const x = sketch.lerp(MARGIN, sketch.width - MARGIN, point[0]);

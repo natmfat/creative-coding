@@ -6,7 +6,7 @@ import { GRID_MARGIN, GRID_SIZE, CELL_SIZE, SCALE } from "./config";
 new p5((sketch: p5) => {
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
-    canvas.elt.className = "canvas--center";
+    canvas.elt.className = "canvas--center outline";
     sketch.noLoop();
 
     const [border, ...palette] = (() => {

@@ -4,6 +4,7 @@ import { createGrid } from "shared/utils/grid";
 import { CHARACTERS, GRID_SIZE } from "./config";
 import { Character } from "./Character";
 import { title } from "shared/utils/document";
+import { P5Utils, createP5Utils } from "shared/utils/createP5Utils";
 
 title("Data Lake");
 
@@ -17,12 +18,13 @@ new p5((sketch: p5) => {
 
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
-    canvas.elt.className = "canvas--center";
+    canvas.elt.className = "canvas--center outline";
   };
 
   sketch.draw = () => {
     timer += 0.01;
     sketch.background(bg);
+
     grid.forEach((circle) => {
       circle.draw(sketch, timer);
     });

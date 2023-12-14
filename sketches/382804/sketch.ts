@@ -15,7 +15,7 @@ new p5((sketch: p5) => {
 
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
-    canvas.elt.className = "canvas--center";
+    canvas.elt.className = "canvas--center outline";
     sketch.noLoop();
 
     const CELL_SIZE = (sketch.width - GRID_MARGIN * 2) / GRID_SIZE;
@@ -46,7 +46,5 @@ new p5((sketch: p5) => {
           rectangle.draw(sketch, palette);
         }
       });
-
-    createP5Utils(sketch).frame(2);
   };
 });

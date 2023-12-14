@@ -23,6 +23,6 @@ new p5((sketch: p5) => {
       rectangle.draw(sketch, palette);
     }
 
-    createP5Utils(sketch).frame(2);
+    createP5Utils(sketch).frame(7);
   };
 });

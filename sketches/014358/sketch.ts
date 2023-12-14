@@ -5,16 +5,16 @@ import { GRID_MARGIN, GRID_SIZE } from "./config";
 import { Circle } from "./Circle";
 
 new p5((sketch: p5) => {
-  const [clrBackground, clrCircle] = sketch.shuffle(createPalette());
+  const palette = sketch.shuffle(createPalette());
   let grid: Circle[] = [];
   let pos: p5.Vector;
 
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
-    canvas.elt.className = "canvas--center";
+    canvas.elt.className = "canvas--center outline";
 
     grid = createGrid(GRID_SIZE).map(
-      (pos) => new Circle(sketch, clrCircle, pos)
+      (pos) => new Circle(sketch, palette[0], pos)
     );
 
     pos = new p5.Vector(
@@ -26,7 +26,7 @@ new p5((sketch: p5) => {
   };
 
   sketch.draw = () => {
-    sketch.background(clrBackground);
+    sketch.background(255);
     for (const circle of grid) {
       circle.draw(pos);
     }

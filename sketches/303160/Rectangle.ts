@@ -32,7 +32,7 @@ export class Rectangle {
 
   draw(sketch: p5, palette: string[]) {
     sketch.fill(sketch.random(palette));
-    sketch.strokeWeight(2);
+    sketch.strokeWeight(4);
     sketch.stroke(0);
     sketch.rect(
       this.x - 0.5,

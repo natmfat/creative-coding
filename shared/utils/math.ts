@@ -1,5 +1,5 @@
 /**
- * @file Basic math utilities for sketches that don't require the entirety of p5
+ * @file Basic math utilities for sketches that don't require the entirety of p5 or three
  * @author Nathan <natmfat@gmail.com>
  */
 

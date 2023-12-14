@@ -6,6 +6,8 @@ export type P5UtilsConfig = {
   gridMargin: number;
 };
 
+export type P5Utils = ReturnType<typeof createP5Utils>;
+
 export function createP5Utils(
   sketch: p5,
   { gridSizeX = 0, gridSizeY = 0, gridMargin = 40 }: Partial<P5UtilsConfig> = {}
@@ -15,18 +17,10 @@ export function createP5Utils(
    * @param weight Width of the outline
    */
   function frame(weight: number) {
-    const doubleWeight = weight * 2;
-    const offset = 0.5;
-
     sketch.noFill();
     sketch.stroke(0);
     sketch.strokeWeight(weight);
-    sketch.rect(
-      weight - offset,
-      weight - offset,
-      sketch.width - doubleWeight + offset,
-      sketch.height - doubleWeight + offset
-    );
+    sketch.rect(0, 0, sketch.width, sketch.height);
   }
 
   function scaleX(x: number) {
