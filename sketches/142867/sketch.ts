@@ -4,7 +4,6 @@ import { createGrid } from "shared/utils/grid";
 import { CHARACTERS, GRID_SIZE } from "./config";
 import { Character } from "./Character";
 import { title } from "shared/utils/document";
-import { P5Utils, createP5Utils } from "shared/utils/createP5Utils";
 
 title("Data Lake");
 

@@ -2,7 +2,6 @@ import p5 from "p5";
 import { createPalette } from "shared/utils/color";
 import { Rectangle } from "./Rectangle";
 import { title } from "shared/utils/document";
-import { createP5Utils } from "shared/utils/createP5Utils";
 import { createGrid } from "shared/utils/grid";
 
 title("Piet Mondrian Grid");
