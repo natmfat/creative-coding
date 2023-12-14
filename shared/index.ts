@@ -26,7 +26,7 @@ Object.keys(sketches)
     );
   });
 
-const images = import.meta.glob("../gallery/*.png");
+const images = import.meta.glob("../public/gallery/*.png");
 
 Object.keys(images)
   .map(getSketchID)
