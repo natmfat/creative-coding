@@ -1,3 +1,4 @@
+import glsl from "vite-plugin-glsl";
 import { defineConfig, loadEnv } from "vite";
 import { readdirSync, lstatSync } from "fs";
 import { resolve } from "path";
@@ -21,6 +22,7 @@ function createInput() {
 
 // https://vitejs.dev/guide/build.html#multi-page-app
 export default defineConfig({
+  plugins: [glsl()],
   build: {
     rollupOptions: {
       input: createInput(),

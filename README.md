@@ -10,3 +10,8 @@ https://inconvergent.net/generative/
 https://experiments.withgoogle.com/ink-space
 http://zach.li/
 http://www.complexification.net/gallery/machines/happyPlace/
+
+### Shaders
+
+https://thebookofshaders.com/
+https://medium.com/@sidiousvic/how-to-use-shaders-as-materials-in-three-js-660d4cc3f12a
