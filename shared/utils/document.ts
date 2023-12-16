@@ -7,7 +7,7 @@ export function title(title: string) {
     jsh.span(
       {
         className:
-          "fixed bottom-6 left-1/2 -translate-x-1/2 text-sm px-4 py-2 rounded-md border shadow-md",
+          "fixed bottom-6 left-1/2 -translate-x-1/2 text-sm px-4 py-2 rounded-md border shadow-md whitespace-nowrap",
       },
       title,
       " • ",
