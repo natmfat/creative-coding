@@ -6,7 +6,7 @@ import vertexShader from "./shader.vert";
 
 const SKETCH_SIZE = 500;
 
-title("Sphere");
+title("Lava Lamp");
 
 new p3((sketch) => {
   const uniforms = {
@@ -17,7 +17,7 @@ new p3((sketch) => {
 
   sketch.setup = () => {
     const canvas = sketch.createCanvas(SKETCH_SIZE, SKETCH_SIZE);
-    canvas.className = "canvas--center";
+    canvas.className = "canvas--center outline";
 
     sketch.background("white");
 
