@@ -52,7 +52,7 @@ new p5((sketch: p5) => {
 
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
-    canvas.elt.className = "canvas--center outline";
+    canvas.elt.className = "canvas--center";
     sketch.noLoop();
 
     noiseOverlay = createP5Utils(sketch).createNoiseOverlay();

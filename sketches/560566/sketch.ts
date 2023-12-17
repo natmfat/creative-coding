@@ -1,4 +1,5 @@
 import p5 from "p5";
+import { createP5Utils } from "shared/utils/createP5Utils";
 import { title } from "shared/utils/document";
 
 const RINGS_COUNT = 40;
@@ -9,9 +10,13 @@ title("Concentric Waves");
 new p5((sketch: p5) => {
   let timer = 0;
 
+  let noise: p5.Graphics;
+
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
     canvas.elt.className = "canvas--center outline";
+
+    noise = createP5Utils(sketch).createNoiseOverlay();
   };
 
   sketch.draw = () => {
@@ -39,5 +44,8 @@ new p5((sketch: p5) => {
 
       sketch.pop();
     }
+
+    sketch.image(noise, 0, 0);
+    sketch.blendMode(sketch.BLEND);
   };
 });

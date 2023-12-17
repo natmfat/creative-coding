@@ -1,12 +1,13 @@
 import p5 from "p5";
 import { createPalette } from "shared/utils/color";
+import { createP5Utils } from "shared/utils/createP5Utils";
 import { title } from "shared/utils/document";
 import { createGrid } from "shared/utils/grid";
 
 const GRID_SIZE = 17;
 const GRID_MARGIN = 40;
 const HALF_GRID_SIZE = Math.floor(GRID_SIZE / 2);
-const CELL_SIZE = 20;
+const CELL_SIZE = 27;
 
 type Cell = { show: boolean; uv: number[]; color: string };
 
@@ -52,9 +53,11 @@ new p5((sketch: p5) => {
 
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
-    canvas.elt.className = "canvas--center outline";
+    canvas.elt.className = "canvas--center";
     sketch.noLoop();
+  };
 
+  sketch.draw = () => {
     sketch.background(255);
 
     for (const { uv, show, color } of grid) {
@@ -70,5 +73,8 @@ new p5((sketch: p5) => {
       sketch.rectMode(sketch.CENTER);
       sketch.rect(x, y, CELL_SIZE);
     }
+
+    sketch.image(createP5Utils(sketch).createNoiseOverlay(), 0, 0);
+    sketch.blendMode(sketch.BLEND);
   };
 });
