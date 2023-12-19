@@ -7,7 +7,7 @@ title("Structures");
 
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 const palette = createPalette().map(
-  (color) => new THREE.MeshStandardMaterial({ color })
+  (color) => new THREE.MeshStandardMaterial({ color }),
 );
 
 function createCube(color: THREE.MeshStandardMaterial) {
@@ -18,7 +18,7 @@ function createCube(color: THREE.MeshStandardMaterial) {
   cube.position.set(
     THREE.MathUtils.randFloat(-1, 1),
     THREE.MathUtils.randFloat(-1, 1),
-    THREE.MathUtils.randFloat(-1, 1)
+    THREE.MathUtils.randFloat(-1, 1),
   );
 
   return cube;

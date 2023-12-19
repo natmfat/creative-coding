@@ -16,7 +16,7 @@ function createInput() {
       }),
       {
         index: resolve(__dirname, "index.html"),
-      }
+      },
     );
 }
 

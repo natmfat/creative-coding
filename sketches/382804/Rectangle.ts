@@ -8,7 +8,7 @@ export class Rectangle {
     private width: number,
     private height: number,
     rectangles: Rectangle[],
-    force: boolean = false
+    force: boolean = false,
   ) {
     // recursively create another rectangle (by chance)
     if ((Math.random() > 0.3 && rectangles.length < MAX_RECTANGLES) || force) {
@@ -38,7 +38,7 @@ export class Rectangle {
       this.x - 0.5,
       this.y - 0.5,
       this.width + 0.5,
-      this.height + 0.5
+      this.height + 0.5,
     );
   }
 }

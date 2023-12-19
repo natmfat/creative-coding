@@ -28,10 +28,10 @@ new p5((sketch: p5) => {
       nodes.push(
         new Node(
           new p5.Vector(Math.cos(angle) * RADIUS, Math.sin(angle) * RADIUS).add(
-            origin
+            origin,
           ),
-          sketch.random(palette)
-        )
+          sketch.random(palette),
+        ),
       );
     }
 

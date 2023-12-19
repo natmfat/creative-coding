@@ -30,8 +30,8 @@ new p3((sketch) => {
           uniforms,
           vertexShader,
           fragmentShader,
-        })
-      )
+        }),
+      ),
     );
   };
 

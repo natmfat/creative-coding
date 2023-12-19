@@ -7,7 +7,7 @@ import { Circle } from "./Circle";
 new p5((sketch: p5) => {
   const [clrBackground, ...colors] = sketch.shuffle(createPalette());
   const grid = createGrid(GRID_SIZE).map(
-    (pos) => new Circle(sketch, sketch.random(colors), pos)
+    (pos) => new Circle(sketch, sketch.random(colors), pos),
   );
 
   sketch.setup = () => {

@@ -39,7 +39,7 @@ new p5((sketch: p5) => {
         size,
         size,
         0,
-        sketch.map(sketch.noise(progress + timer), 0, 1, 0, sketch.TWO_PI)
+        sketch.map(sketch.noise(progress + timer), 0, 1, 0, sketch.TWO_PI),
       );
 
       sketch.pop();

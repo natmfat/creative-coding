@@ -16,7 +16,7 @@ new p5((sketch: p5) => {
     sketch.noLoop();
 
     rectangles.push(
-      new Rectangle(0, 0, sketch.width, sketch.height, rectangles, true)
+      new Rectangle(0, 0, sketch.width, sketch.height, rectangles, true),
     );
 
     for (const rectangle of rectangles.reverse()) {

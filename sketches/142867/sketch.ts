@@ -10,7 +10,7 @@ title("Data Lake");
 new p5((sketch: p5) => {
   const [bg, ...colors] = sketch.shuffle(createPalette());
   const grid = createGrid(GRID_SIZE).map(
-    (pos) => new Character(sketch.random(colors), CHARACTERS[0], pos)
+    (pos) => new Character(sketch.random(colors), CHARACTERS[0], pos),
   );
 
   let timer = 0;

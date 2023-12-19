@@ -21,7 +21,7 @@ const setAttributeList = ["className", "style"];
 export function h(
   tag: string,
   props: Props = {},
-  children: Children = []
+  children: Children = [],
 ): HTMLElement {
   const element: HTMLElement = document.createElement(tag);
 
@@ -61,5 +61,5 @@ export const jsh: HyperProxy = new Proxy(
       (_, tag: string) =>
       (props: Props, ...children: Children) =>
         h(tag, props, children),
-  }
+  },
 );

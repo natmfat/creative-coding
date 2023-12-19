@@ -14,12 +14,12 @@ new p5((sketch: p5) => {
     canvas.elt.className = "canvas--center outline";
 
     grid = createGrid(GRID_SIZE).map(
-      (pos) => new Circle(sketch, palette[0], pos)
+      (pos) => new Circle(sketch, palette[0], pos),
     );
 
     pos = new p5.Vector(
       sketch.random(GRID_MARGIN, sketch.width - GRID_MARGIN),
-      sketch.random(GRID_MARGIN, sketch.height - GRID_MARGIN)
+      sketch.random(GRID_MARGIN, sketch.height - GRID_MARGIN),
     );
 
     sketch.noLoop();

@@ -11,13 +11,13 @@ export function title(title: string) {
       },
       title,
       " • ",
-      jsh.span({ className: "text-slate-400" }, `#${getSketchID()}`)
-    )
+      jsh.span({ className: "text-slate-400" }, `#${getSketchID()}`),
+    ),
   );
 }
 
 export function getSketchID(
-  sketchNumber: number | string = location.href
+  sketchNumber: number | string = location.href,
 ): string {
   sketchNumber = parseInt(
     sketchNumber
@@ -25,7 +25,7 @@ export function getSketchID(
       .replace("index.html", "/")
       .split("/")
       .filter((segment) => segment.length > 0)
-      .pop() || ""
+      .pop() || "",
   );
 
   return (isNaN(sketchNumber) ? 0 : sketchNumber).toString().padStart(6, "0");

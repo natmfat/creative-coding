@@ -21,8 +21,8 @@ Object.keys(sketches)
           className: "underline hover:drop-shadow-md",
           href: `/sketches/${sketch}/`,
         },
-        sketch
-      )
+        sketch,
+      ),
     );
   });
 
@@ -38,7 +38,7 @@ Object.keys(images)
           className: "block no-underline",
           href: `/sketches/${sketch}/`,
         },
-        jsh.img({ src: `/gallery/${sketch}.png`, alt: `Sketch #${sketch}` })
-      )
+        jsh.img({ src: `/gallery/${sketch}.png`, alt: `Sketch #${sketch}` }),
+      ),
     );
   });

@@ -47,7 +47,7 @@ new p5((sketch: p5) => {
       Math.floor(sketch.random(GRID_SIZE)),
       HALF_GRID_SIZE + Math.floor(sketch.random(-4, 4)),
       grid,
-      palette[i]
+      palette[i],
     );
   }
 

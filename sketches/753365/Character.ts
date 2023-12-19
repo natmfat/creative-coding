@@ -16,7 +16,7 @@ export class Character {
     this.character = character;
     this.noise = Math.pow(
       __sketch.noise(pos[0] * NOISE_SCALE, pos[1] * NOISE_SCALE) + 0.7,
-      4
+      4,
     );
   }
 
@@ -24,7 +24,7 @@ export class Character {
     return this.__sketch.lerp(
       GRID_MARGIN,
       this.__sketch.width - GRID_MARGIN,
-      coord
+      coord,
     );
   }
 

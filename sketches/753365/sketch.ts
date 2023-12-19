@@ -12,7 +12,7 @@ new p5((sketch: p5) => {
   const [bg, ...colors] = sketch.shuffle(createPalette());
   const grid = createGrid(GRID_SIZE).map(
     (pos) =>
-      new Character(sketch, sketch.random(colors), sketch.random(["="]), pos)
+      new Character(sketch, sketch.random(colors), sketch.random(["="]), pos),
   );
 
   sketch.setup = () => {

@@ -38,8 +38,8 @@ new p5((sketch: p5) => {
             CELL_SIZE,
             CELL_SIZE,
             rectangles,
-            true
-          )
+            true,
+          ),
         );
 
         for (const rectangle of rectangles.reverse()) {

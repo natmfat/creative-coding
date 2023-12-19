@@ -25,7 +25,7 @@ new p5((sketch: p5) => {
         pos,
         radius: Math.pow(
           sketch.noise(pos[0] * SCALE, pos[1] * SCALE) + 1,
-          random
+          random,
         ),
       }));
 

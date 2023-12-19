@@ -22,7 +22,7 @@ new p5((sketch: p5) => {
         .map((pos) => ({
           pos,
           radius: Math.abs(sketch.randomGaussian()),
-        }))
+        })),
     );
 
     // render grid
@@ -33,7 +33,7 @@ new p5((sketch: p5) => {
       sketch.circle(
         sketch.lerp(GRID_MARGIN, sketch.width - GRID_MARGIN, pos[0]),
         sketch.lerp(GRID_MARGIN, sketch.height - GRID_MARGIN, pos[1]),
-        1 + CELL_SIZE * Math.pow(radius, 2)
+        1 + CELL_SIZE * Math.pow(radius, 2),
       );
     });
   };

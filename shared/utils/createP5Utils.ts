@@ -10,7 +10,11 @@ export type P5Utils = ReturnType<typeof createP5Utils>;
 
 export function createP5Utils(
   sketch: p5,
-  { gridSizeX = 0, gridSizeY = 0, gridMargin = 40 }: Partial<P5UtilsConfig> = {}
+  {
+    gridSizeX = 0,
+    gridSizeY = 0,
+    gridMargin = 40,
+  }: Partial<P5UtilsConfig> = {},
 ) {
   /**
    * Create a textured noise pattern over the sketch \

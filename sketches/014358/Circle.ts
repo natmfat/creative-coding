@@ -17,7 +17,7 @@ export class Circle {
     return this.__sketch.lerp(
       GRID_MARGIN,
       this.__sketch.width - GRID_MARGIN,
-      coord
+      coord,
     );
   }
 

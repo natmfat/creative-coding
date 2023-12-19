@@ -5,7 +5,10 @@ export class Node {
   private vel = new p5.Vector();
   private connections: Node[] = [];
 
-  constructor(public pos: p5.Vector, private color: p5.Color) {}
+  constructor(
+    public pos: p5.Vector,
+    private color: p5.Color,
+  ) {}
 
   addConnection(node: Node) {
     this.connections.push(node);

@@ -21,7 +21,7 @@ new p5((sketch: p5) => {
       sketch.circle(
         sketch.lerp(GRID_MARGIN, sketch.width - GRID_MARGIN, circle[0]),
         sketch.lerp(GRID_MARGIN, sketch.height - GRID_MARGIN, circle[1]),
-        CELL_SIZE
+        CELL_SIZE,
       );
     });
   };

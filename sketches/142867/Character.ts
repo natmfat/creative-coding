@@ -22,7 +22,7 @@ export class Character {
     const noise = Math.pow(
       sketch.noise(this.uv[0] * NOISE_SCALE + timer, this.uv[1] * NOISE_SCALE) +
         0.5,
-      4
+      4,
     );
 
     if (noise < 0.2) {
@@ -33,7 +33,7 @@ export class Character {
 
     sketch.translate(
       this.scale(sketch, this.pos.x),
-      this.scale(sketch, this.pos.y)
+      this.scale(sketch, this.pos.y),
     );
     sketch.scale(noise);
 
