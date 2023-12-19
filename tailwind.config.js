@@ -2,8 +2,8 @@
 export default {
   content: [
     "./index.html",
-    "./sketches/**/*.{js,ts,jsx,tsx}",
-    "./shared/**/*.{js,ts,jsx,tsx}",
+    "./sketches/**/*.{js,ts,jsx,tsx,html}",
+    "./shared/**/*.{js,ts,jsx,tsx,html,css}",
   ],
   theme: {
     extend: {
