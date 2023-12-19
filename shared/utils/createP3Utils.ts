@@ -11,7 +11,7 @@ export function createP3Utils(sketch: p3) {
   function usePixelCoordinates(distance = 500) {
     const fov = (2 * Math.atan(sketch.height / (2 * distance)) * 180) / Math.PI;
 
-    sketch.perspective(fov, 0.1, distance);
+    sketch.perspective(fov, 0.01, distance * 2);
     sketch.camera.position.z = distance;
     sketch.camera.lookAt(new THREE.Vector3(0, 0, 0));
   }
