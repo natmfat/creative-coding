@@ -3,10 +3,17 @@ import p5 from "p5";
 import { MIN_DISTANCE } from "./config";
 
 export class Node {
+  public pos: p5.Vector;
+
   private vel = new p5.Vector();
   private connections: Node[] = [];
+  private color: p5.Color;
 
-  constructor(public pos: p5.Vector) {}
+  constructor(pos: p5.Vector, color: p5.Color) {
+    this.pos = pos;
+    this.color = color;
+    this.color.setAlpha(2);
+  }
 
   addConnection(node: Node) {
     this.connections.push(node);
@@ -21,10 +28,10 @@ export class Node {
             MIN_DISTANCE
         )
       ) {
-        continue;
+        this.vel.add(node.pos.copy().sub(this.pos).mult(-0.001));
       }
 
-      this.vel.add(node.pos.copy().sub(this.pos).mult(0.01));
+      this.vel.add(node.pos.copy().sub(this.pos).mult(0.001));
     }
 
     this.pos.add(this.vel);
@@ -32,7 +39,7 @@ export class Node {
   }
 
   draw(sketch: p5) {
-    sketch.stroke(0, 20);
+    sketch.stroke(this.color);
     for (const node of this.connections) {
       sketch.line(this.pos.x, this.pos.y, node.pos.x, node.pos.y);
     }

@@ -1,5 +1,5 @@
 import p5 from "p5";
-import { createP5Utils } from "shared/utils/createP5Utils";
+import { createPalette } from "shared/utils/color";
 import { title } from "shared/utils/document";
 
 import { Node } from "./Node";
@@ -10,10 +10,11 @@ import { NODE_COUNT, RADIUS } from "./config";
 // A. Move close to friends but no closer than some minimum distance.
 // B. Distance self from non-friends as reasonably as possible.
 
-title("Monochrome Nodes");
+title("Galaxy");
 
 new p5((sketch: p5) => {
   const nodes: Node[] = [];
+  const palette = createPalette();
 
   sketch.setup = () => {
     const canvas = sketch.createCanvas(500, 500);
@@ -23,12 +24,13 @@ new p5((sketch: p5) => {
 
     // create nodes
     for (let i = 0; i < NODE_COUNT; i++) {
-      const angle = sketch.map(i, 0, NODE_COUNT - 1, 0, sketch.TWO_PI);
+      const angle = sketch.random(0, sketch.TWO_PI);
       nodes.push(
         new Node(
           new p5.Vector(Math.cos(angle) * RADIUS, Math.sin(angle) * RADIUS).add(
             origin,
           ),
+          sketch.color(sketch.random(palette)),
         ),
       );
     }
@@ -39,21 +41,13 @@ new p5((sketch: p5) => {
     }
 
     sketch.background(255);
-  };
-
-  sketch.draw = () => {
-    for (const node of nodes) {
-      node.update(sketch);
-      node.draw(sketch);
+    for (let i = 0; i < 100 * 50; i++) {
+      for (const node of nodes) {
+        node.update(sketch);
+        node.draw(sketch);
+      }
     }
 
-    if (sketch.frameCount > 250) {
-      sketch.noLoop();
-
-      const utils = createP5Utils(sketch);
-
-      sketch.image(utils.createNoiseOverlay(), 0, 0);
-      sketch.blendMode(sketch.BLEND);
-    }
+    sketch.noLoop();
   };
 });

@@ -22,13 +22,13 @@ export function createP5Utils(
    * @link https://openprocessing.org/sketch/2102209
    * @returns Completed noise overlay
    */
-  function createNoiseOverlay() {
+  function createNoiseOverlay(opacity: number = 20) {
     const noiseOverlay = sketch.createGraphics(sketch.width, sketch.height);
     noiseOverlay.loadPixels();
     for (let x = 0; x < sketch.width; x++) {
       for (let y = 0; y < sketch.height; y++) {
         const rand = sketch.random() * 255;
-        noiseOverlay.set(x, y, [rand, rand, rand, 20]);
+        noiseOverlay.set(x, y, [rand, rand, rand, opacity]);
       }
     }
 

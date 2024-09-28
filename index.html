@@ -26,12 +26,33 @@
   </head>
   <body>
     <div id="app" class="max-w-2xl w-full mx-auto px-6 mt-20">
-      <h1 class="mt-8 text-2xl font-semibold">Creative Coding</h1>
-      <p class="mt-2 text-slate-500">
-        An art exhibition and exploration of code.
+      <h1 class="mt-4 text-2xl font-semibold">Creative Coding</h1>
+      <p class="mt-1 text-slate-500">
+        An exploration of code turned art exhibition made with p5.js and
+        Three.js
       </p>
-      <ul id="sketches" class="mt-2 pl-6 list-disc"></ul>
-      <!-- <div id="gallery" class="flex flex-wrap flex-0 mt-2 gap-2"></div> -->
+
+      <article class="mt-4 flex flex-col gap-y-2 gap-x-4 md:flex-row">
+        <img
+          class="object-fill h-auto aspect-square w-64 max-w-full bg-slate-100 flex-shrink-0 border-2 border-black"
+          src="/gallery/galaxy.png"
+        />
+        <div class="flex flex-col flex-1 gap-1">
+          <h1 class="text-xl font-semibold">Galaxy</h1>
+          <p class="text-slate-500">
+            One of my favorite pieces. It takes a while to draw, but it involves
+            a series of connected nodes that "drag" each other around (drawing a
+            line between them), resulting in some fascinating swirls.
+          </p>
+          <a class="block underline" href="/sketches/galaxy/"
+            >Visit Artpiece →</a
+          >
+        </div>
+      </article>
+
+      <h1 class="text-xl font-semibold mt-4">Other Sketches</h1>
+      <ul id="sketches" class="mt-1 pl-6 list-disc"></ul>
+
       <footer class="text-center py-8 px-2">
         <a
           href="https://natmfat.com"
