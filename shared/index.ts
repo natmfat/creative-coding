@@ -8,7 +8,6 @@ if (window.location.pathname !== "/") {
 }
 
 const $sketches = document.getElementById("sketches")!;
-const $gallery = document.getElementById("gallery")!;
 
 // @audit-ok would use import.meta.env.VITE_SKETCHES_DIR but only literals allowed
 const allSketches = Object.keys(import.meta.glob("../sketches/**/*.html"))
