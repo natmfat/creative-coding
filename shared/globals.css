@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.canvas--center {
-  @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
-}
+@layer components {
+  .canvas--center {
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
 
-.canvas--full {
-  @apply w-screen h-screen;
+  .canvas--full {
+    @apply w-screen h-screen;
+  }
 }

@@ -1,11 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      // @audit-ok https://stackoverflow.com/questions/21147149/flash-of-unstyled-content-fouc-in-firefox-only-is-ff-slow-renderer
-      let FF_FOUC_FIX;
-    </script>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -25,24 +20,7 @@
     <link rel="stylesheet" href="/shared/globals.css" />
   </head>
   <body>
-    <div id="app" class="max-w-2xl w-full mx-auto px-6 mt-20">
-      <h1 class="mt-8 text-2xl font-semibold">Creative Coding</h1>
-      <p class="mt-2 text-slate-500">
-        An art exhibition and exploration of code.
-      </p>
-      <ul id="sketches" class="mt-2 pl-6 list-disc"></ul>
-      <!-- <div id="gallery" class="flex flex-wrap flex-0 mt-2 gap-2"></div> -->
-      <footer class="text-center py-8 px-2">
-        <a
-          href="https://natmfat.com"
-          target="_blank"
-          rel="noreferrer"
-          class="underline"
-          >@natmfat</a
-        >
-      </footer>
-    </div>
-
-    <script type="module" src="/shared/index.ts"></script>
+    <div id="app" class="canvas--full"></div>
+    <script type="module" src="./sketch.ts"></script>
   </body>
 </html>

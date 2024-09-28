@@ -1,4 +1,5 @@
-import { getSketchID } from "./utils/document";
+import { cn } from "./cn";
+import { DEFAULT_SKETCH, getSketchID } from "./utils/document";
 import { jsh } from "./utils/jsh";
 
 if (window.location.pathname !== "/") {
@@ -10,35 +11,21 @@ const $sketches = document.getElementById("sketches")!;
 const $gallery = document.getElementById("gallery")!;
 
 // @audit-ok would use import.meta.env.VITE_SKETCHES_DIR but only literals allowed
-const sketches = import.meta.glob("../sketches/**/*.html");
-Object.keys(sketches)
+const allSketches = Object.keys(import.meta.glob("../sketches/**/*.html"))
   .map(getSketchID)
-  .filter((sketch) => sketch !== "000000")
-  .forEach((sketch) => {
-    $sketches.appendChild(
+  .filter((sketch) => sketch !== DEFAULT_SKETCH);
+
+allSketches.forEach((sketch) => {
+  $sketches.appendChild(
+    jsh.li(
+      {},
       jsh.a(
         {
-          className: "underline hover:drop-shadow-md",
+          className: cn("text-black underline"),
           href: `/sketches/${sketch}/`,
         },
         sketch,
       ),
-    );
-  });
-
-const images = import.meta.glob("../public/gallery/*.png");
-
-Object.keys(images)
-  .map(getSketchID)
-  .filter((sketch) => sketch !== "000000")
-  .forEach((sketch) => {
-    $gallery.appendChild(
-      jsh.a(
-        {
-          className: "block no-underline",
-          href: `/sketches/${sketch}/`,
-        },
-        jsh.img({ src: `/gallery/${sketch}.png`, alt: `Sketch #${sketch}` }),
-      ),
-    );
-  });
+    ),
+  );
+});
